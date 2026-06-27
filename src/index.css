@@ -1,0 +1,653 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #f1f3f6; /* Subtle desktop background */
+  font-family: 'Rubik', 'Montserrat', sans-serif; /* Prioritizes Rubik as per XD specs */
+  color: #1d2226;
+}
+
+/* Container to center the mobile view on desktop screens */
+.app-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 15px;
+}
+
+/* Mobile App Screen Frame */
+.mobile-screen {
+  width: 100%;
+  max-width: 375px;          /* EXACT design width from specs */
+  height: 812px;             /* EXACT design height from specs */
+  background: #F7F8F9;       /* EXACT design background hex from specs */
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling for smooth scrolling inside the frame */
+.mobile-screen::-webkit-scrollbar {
+  width: 4px;
+}
+.mobile-screen::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+/* Branding colors custom overrides */
+.btn-popx-primary {
+  background-color: #6C25FF !important;
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.btn-popx-secondary {
+  background-color: #CBC3E3 !important;
+  color: #1D2226 !important;
+  border: none;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+/* Floating outline labels custom to your UI screenshot */
+.form-floating-custom {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-floating-custom label {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: white;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #6C25FF;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.form-floating-custom input {
+  border: 1px solid #CBC3E3;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.form-floating-custom input:focus {
+  border-color: #6C25FF;
+  box-shadow: 0 0 0 0.2rem rgba(108, 37, 255, 0.2);
+  outline: none;
+}
+
+/* ==========================================================
+   PIXEL-PERFECT ADOBE XD WELCOME SCREEN SPECIFICATIONS
+   ========================================================== */
+
+/* Global Welcome Screen Viewport Wrapper */
+/* Update or add this specific class in your src/index.css */
+.welcome-screen-wrapper {
+  /* Layout Properties */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  height: 812px;
+  
+  /* UI Properties */
+  background: #F7F8F9 0% 0% no-repeat padding-box;
+  opacity: 1;
+  box-sizing: border-box;
+  overflow: hidden; /* Keeps all absolute child components contained perfectly inside the 375x812 frame */
+}
+
+/* "Welcome to PopX" Heading Spec */
+.welcome-title-spec {
+  top: 549px;
+  left: 20px;
+  width: 231px;
+  height: 33px;
+  
+  /* Font Family & Styles mapping */
+  font-family: 'Rubik', sans-serif;
+  font-size: 28px;
+  font-weight: 500 !important;       /* Maps to medium weight */
+  line-height: 17px;      /* Exact line-height constraint */
+  letter-spacing: 0px;
+  
+  color: #1D2226;
+  opacity: 1;
+  margin: 0;
+}
+/* Description Text Block Spec */
+.welcome-desc-spec {
+  top: 592px;
+  left: 20px;
+  width: 232px;
+  height: 48px;
+  
+  /* Typography specifications */
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  font-weight: 400;       /* Normal weight */
+  line-height: 26px;      /* Exact paragraph leading spacing */
+  letter-spacing: 0px;
+  
+  color: #1D2226;
+  opacity: 0.6;           /* Faded state from design properties */
+  margin: 0;
+}
+/* Perfect pairing of your Create Account Box Shape and Text Label Properties */
+.btn-create-account-spec {
+  /* --- Box Shape Properties --- */
+  top: 669px;
+  left: 20px;
+  width: 335px;
+  height: 46px;
+  background: #6C25FF 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+
+  /* --- Text Label Properties --- */
+  color: #FFFFFF;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 500;       /* Medium weight */
+  line-height: 17px;      /* Exact text leading property */
+  letter-spacing: 0px;
+  text-align: center;
+  
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-create-account-spec:hover {
+  background-color: #561cd6 !important;
+}
+/* Perfect pairing of your Already Registered Box Shape and Text Label Properties */
+.btn-already-registered-spec {
+  /* --- Box Shape Properties --- */
+  top: 725px;
+  left: 20px;
+  width: 335px;
+  height: 46px;
+  background: #6C25FF4B 0% 0% no-repeat padding-box;
+  border-radius: 6px; /* Maintained for matching design border radius harmony */
+  opacity: 1;
+
+  /* --- Text Label Properties --- */
+  color: #1D2226;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 500;       /* Medium weight */
+  line-height: 17px;      /* Exact text leading property */
+  letter-spacing: 0px;
+  text-align: center;
+  
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn-already-registered-spec:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================
+   PIXEL-PERFECT ADOBE XD LOGIN SCREEN SPECIFICATIONS
+   ========================================================== */
+
+.login-screen-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* "Signin to your PopX account" */
+.login-title-spec {
+  top: 40px;
+  left: 20px;
+  width: 188px;
+  height: 69px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 28px;
+  font-weight: 500; /* medium */
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  opacity: 1;
+  margin: 0;
+}
+
+/* Description text */
+.login-desc-spec {
+  top: 123px;
+  left: 20px;
+  width: 232px;
+  height: 48px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  font-weight: 400; /* normal */
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  opacity: 0.6;
+  margin: 0;
+}
+
+/* Input block wrapper standard constraints */
+.login-input-container {
+  left: 20px;
+  width: 335px;
+}
+
+/* Floating/Overlapping Label Styling */
+.login-label-spec {
+  position: absolute;
+  left: 14px; /* Placed cleanly to offset left frame edges */
+  height: 15px;
+  background: #F7F8F9; /* Matches your mobile-screen frame background exactly */
+  padding: 0 4px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  font-weight: 400 !important;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #6C25FF;
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Base Field Input Properties */
+.login-input-box-spec {
+  height: 40px;
+  border: 1px solid #CBCBCB;
+  border-radius: 6px;
+  opacity: 1;
+  background: transparent;
+  padding: 0 12px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 14px;
+  color: #1D2226;
+}
+.login-input-box-spec:focus {
+  border-color: #6C25FF;
+  outline: none;
+}
+
+/* Base field placeholder formatting overrides */
+.login-input-box-spec::placeholder {
+  color: #CBCBCB;
+}
+
+/* Login Submit Button Box + Text combination rules */
+.btn-login-submit-spec {
+  /* Box Shape Properties */
+  top: 321px;
+  left: 20px;
+  width: 335px;
+  height: 46px;
+  background: #CBCBCB 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+
+  /* Typography Properties */
+  color: #FFFFFF;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  font-weight: 500; /* medium */
+  line-height: 17px;
+  letter-spacing: 0px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-login-submit-spec:hover {
+  background-color: #b5b5b5;
+}
+/* Update or add this specific class in your src/index.css */
+.login-screen-wrapper {
+  /* Layout Properties */
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  height: 812px;
+  
+  /* UI Properties */
+  background: #F7F8F9 0% 0% no-repeat padding-box;
+  opacity: 1;
+  box-sizing: border-box;
+  overflow: hidden; /* Keeps all absolute child components contained perfectly */
+}
+
+
+/* Main Canvas Container */
+.signup-container {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background: #F7F8F9 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font-family: 'Rubik', sans-serif;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Header Text */
+.signup-header {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 188px;
+  height: 69px;
+  text-align: left;
+  font: normal normal medium 28px/36px Rubik;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  opacity: 1;
+}
+
+/* Floating Blue Input Labels */
+.floating-box-label {
+  position: absolute;
+  left: 34px;
+  width: auto;
+  height: 15px;
+  text-align: left;
+  font: normal normal normal 13px/17px Rubik;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #6C25FF; /* Blue/purple theme accent */
+  background: #F7F8F9; /* Blends with container background */
+  padding: 0 4px;
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Input Boxes Styling */
+.custom-form-input {
+  position: absolute;
+  left: 20px;
+  width: 335px;
+  height: 40px;
+  border: 1px solid #CBCBCB;
+  border-radius: 6px;
+  opacity: 1;
+  padding-left: 14px;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+}
+/* Agency Section Layout Wrapper (Bounding Box) */
+.agency-container {
+  position: absolute;
+  top: 474px;
+  left: 20px;
+  width: 132px;
+  height: 47px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Question Title Line */
+.agency-title {
+  width: 125px;
+  height: 15px;
+  text-align: left;
+  font: normal normal normal 13px/17px Rubik;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  opacity: 1;
+  margin: 0;
+  
+  /* Forces text and asterisk to sit perfectly together on one line */
+  display: flex;
+  align-items: center;
+  white-space: nowrap; 
+}
+
+/* Optional: Ensures the red color doesn't shift */
+.asterisk-red {
+  color: #FF0000;
+  margin-left: 2px; /* Small gap right after the question mark */
+}
+
+/* Radio Element Options Wrapper Row */
+.agency-options-row {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between Yes and No option pairs */
+}
+
+/* Radio Selection Circles */
+.custom-radio-circle {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #642AF5;
+  accent-color: #642AF5;
+  opacity: 1;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Labels For Options Text */
+.custom-radio-label {
+  width: 23px;
+  height: 17px;
+  text-align: left;
+  font: normal normal normal 14px/17px Rubik;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  opacity: 1;
+  margin: 0;
+  display: inline-block;
+}
+
+/* Create Account Button Outer Container */
+.btn-submit-account {
+  position: absolute;
+  top: 736px;
+  left: 20px;
+  width: 335px;
+  height: 46px;
+  background: #6C25FF 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  border: none;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Create Account Inner Text Style */
+.btn-submit-text {
+  position: absolute;
+  top: 14px; /* Perfectly centered vertically inside the 46px box */
+  left: 108px; /* Perfectly centered horizontally inside the 335px box */
+  width: 120px;
+  height: 19px;
+  
+  text-align: center;
+  font: normal normal medium 16px/17px Rubik;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  
+  /* Forces text to strictly stay on the exact same line */
+  white-space: nowrap; 
+}
+
+
+
+/* Main Canvas Viewport Container */
+.profile-container {
+  position: relative;
+  width: 375px;
+  height: 812px;
+  background: #F7F8F9 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font-family: 'Rubik', sans-serif;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Header Navbar Block */
+.account-settings-box {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  height: 68px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000007;
+  opacity: 1;
+}
+
+/* Header Text Title Element */
+.account-settings-text {
+  position: absolute;
+  top: 27px;
+  left: 15px;
+  width: 146px;
+  height: 22px;
+  text-align: left;
+  font: normal normal normal 18px/21px Rubik;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  text-transform: capitalize;
+  opacity: 1;
+  margin: 0;
+}
+
+/* Profile Image Vector Avatar Box */
+.profile-avatar-pic {
+  position: absolute;
+  top: 98px;
+  left: 20px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+/* Profile Name Header Text */
+.profile-name-text {
+  position: absolute;
+  top: 98px;
+  left: 116px;
+  width: 73px;
+  height: 18px;
+  text-align: left;
+  font: normal normal medium 15px/19px Rubik;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  text-transform: capitalize;
+  opacity: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Profile Target Identity Description (Email) */
+.profile-email-text {
+  position: absolute;
+  top: 122px;
+  left: 116px;
+  width: 118px;
+  height: 17px;
+  text-align: left;
+  font: normal normal normal 14px/19px Rubik;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  text-transform: capitalize;
+  opacity: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Mid Description Block Text */
+.profile-lorem-text {
+  position: absolute;
+  top: 204px;
+  left: 20px;
+  width: 337px;
+  height: 63px;
+  text-align: left;
+  font: normal normal normal 14px/22px Rubik;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: #1D2226;
+  text-transform: capitalize;
+  opacity: 1;
+  margin: 0;
+}
+
+/* Top Dotted Section Border Line */
+.divider-dashed-top {
+  position: absolute;
+  top: 287px;
+  left: 0px;
+  width: 375px;
+  height: 0px;
+  border: 1px dashed #CBCBCB;
+  opacity: 1;
+}
+
+/* Bottom Page Termination Dotted Border Line */
+.divider-dashed-bottom {
+  position: absolute;
+  top: 776px;
+  left: 0px;
+  width: 375px;
+  height: 0px;
+  border: 1px dashed #CBCBCB;
+  opacity: 1;
+}
+/* Camera Icon Container positioned exactly to your specs */
+.profile-camera-icon {
+  position: absolute;
+  top: 147px;
+  left: 79px;
+  width: 21px;
+  height: 23px;
+  background-color: #6C25FF; /* Fallback visible primary color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 11px;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+}
